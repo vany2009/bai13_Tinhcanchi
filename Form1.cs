@@ -19,10 +19,14 @@ namespace bai13_Tinhcanchi
 
         private void btnTinh_Click(object sender, EventArgs e)
         {
-            string[] canARR = { "Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ" };
-            string[] chiaARR = { "Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mẹo", "Thìn", "Tỵ", "Ngọ", "Mùi" };
-            string giatritrave = canARR[Convert.ToInt32(btnTinh.Text)%10]+ " " + chiaARR[Convert.ToInt32(btnTinh.Text) % 12];  
+            string[] canArr = { "Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ" };
+            string[] chiaArr = { "Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mẹo", "Thìn", "Tỵ", "Ngọ", "Mùi" };
+            string giatritrave = canArr[Convert.ToInt32(txtNam.Text)%10]+ " " + chiaArr[Convert.ToInt32(txtNam.Text) % 12];  
             txtcanchi.Text = giatritrave;
+            for (int i = 2000; i <= 2050; i++)
+            {
+                lstkq.Items.Add(i + "-" + canArr[i % 10] + "" + chiaArr[i % 12]);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -32,7 +36,9 @@ namespace bai13_Tinhcanchi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             
+
+           
+
 
         }
         }
